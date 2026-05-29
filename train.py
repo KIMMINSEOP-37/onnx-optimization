@@ -50,5 +50,8 @@ for epoch in range(5):
 # 저장
 import os
 os.makedirs("models", exist_ok=True)
-torch.save(model.state_dict(), "models/cnn_mnist.pth")
-print("모델 저장 완료 → models/cnn_mnist.pth")
+# 변경 후
+if __name__ == "__main__":
+    # 학습 코드 전체를 이 안으로 넣기
+    torch.save(model.state_dict(), "models/cnn_mnist.pth")
+    print("모델 저장 완료 → models/cnn_mnist.pth")
