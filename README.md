@@ -2,12 +2,11 @@
 
 Comparing inference speed between PyTorch and ONNX Runtime on a CNN model trained with MNIST dataset.
 
-## Results
+## Motivation
+On-device AI requires fast inference on resource-constrained hardware.
+This project explores how ONNX Runtime can accelerate inference 
+compared to standard PyTorch.
 
-| Model | Inference Time | Speedup |
-|-------|---------------|---------|
-| PyTorch | 0.336 ms | 1.00x |
-| ONNX Runtime | 0.097 ms | 3.47x |
 
 ## Project Structure
 onnx-optimization/
@@ -40,3 +39,15 @@ python export.py
 ```bash
 python inference.py
 ```
+
+## Key Findings
+ONNX Runtime achieved **3.47x faster inference** than PyTorch.
+This demonstrates the potential of model format conversion 
+for edge deployment scenarios.
+
+## Results
+
+| Model | Inference Time | Speedup |
+|-------|---------------|---------|
+| PyTorch | 0.336 ms | 1.00x |
+| ONNX Runtime | 0.097 ms | 3.47x |
