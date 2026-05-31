@@ -13,21 +13,6 @@ This project explores how ONNX Runtime can accelerate inference
 compared to standard PyTorch.
 
 
-## Pipeline
-PyTorch CNN 학습 → ONNX Export → ONNX Runtime 추론 → 속도 비교
-```
-[MNIST Dataset]
-      ↓
-[CNN Training]  →  cnn_mnist.pth
-      ↓
-[ONNX Export]   →  cnn_mnist.onnx
-      ↓
-[Inference Speed Comparison]
-      ↓
-PyTorch: 0.336ms  vs  ONNX Runtime: 0.097ms
-              ↓
-         3.47x Speedup
-```
 
 ## Results
 | Model         | Inference Time | Speedup |
@@ -36,17 +21,21 @@ PyTorch: 0.336ms  vs  ONNX Runtime: 0.097ms
 | ONNX Runtime  | 0.097 ms       | 3.47x   |
 
 
-
 ## Project Structure
+
+```
 onnx-optimization/
 ├── train.py        # CNN model training on MNIST
 ├── export.py       # Export PyTorch model to ONNX format
 ├── inference.py    # Inference speed comparison
 └── models/
-├── cnn_mnist.pth   # PyTorch model
-└── cnn_mnist.onnx  # ONNX model
+    ├── cnn_mnist.pth    # PyTorch model
+    └── cnn_mnist.onnx   # ONNX model
+```
+## Pipeline
+
 ```mermaid
-flowchart TD
+flowchart LR
     A[MNIST Dataset] --> B[CNN Training]
     B --> C[cnn_mnist.pth]
     C --> D[ONNX Export]
@@ -54,7 +43,7 @@ flowchart TD
     E --> F[Inference Comparison]
     F --> G[PyTorch: 0.336ms]
     F --> H[ONNX Runtime: 0.097ms]
-    G --> I[3.47x Speedup]
+    G --> I[3.47x Speedup ⚡]
     H --> I
 ```
 
