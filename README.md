@@ -1,16 +1,9 @@
 # ONNX Optimization: PyTorch vs ONNX Runtime
 
 ## Background
-On-device AI 환경에서는 빠른 추론이 필수적입니다.
-라즈베리파이처럼 제한된 하드웨어에서 모델을 실행하려면
-PyTorch 그대로 쓰는 것보다 최적화된 런타임이 필요합니다.
-이 프로젝트는 PyTorch 모델을 ONNX로 변환하고,
-실제 추론 속도가 얼마나 향상되는지 측정합니다.
+PyTorch는 학습에 최적화된 프레임워크로, 추론 시 불필요한 연산 오버헤드가 발생합니다. 반면 ONNX Runtime은 추론만을 위해 설계된 경량 실행 엔진으로, 동일한 모델을 더 빠르게 실행할 수 있습니다. 이 프로젝트는 PyTorch 모델을 ONNX 형식으로 변환하고, 두 실행 환경 간의 추론 속도 차이를 실제로 측정합니다.
 
-## Motivation
-On-device AI requires fast inference on resource-constrained hardware.
-This project explores how ONNX Runtime can accelerate inference 
-compared to standard PyTorch.
+
 
 
 
